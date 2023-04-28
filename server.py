@@ -22,7 +22,11 @@ app = Flask(__name__)
 
 password = sha256(input("Enter password for your Storaj: ").encode('utf-8')).hexdigest()
 
-print(password)
+
+
+if not os.path.exists('storaj'):
+    os.makedirs('storaj')
+    
 @app.route('/')
 
 
