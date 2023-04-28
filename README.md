@@ -25,8 +25,7 @@ Enough talk, so in order to run Storaj you will need to open up your terminal an
 ```
 python server.py
 ```
-
-And **BOOM** you're up and running!
+It'll ask you to choose a password. After that, you should be up and running!
 
 ---
 # Usage 
@@ -35,6 +34,10 @@ OK, now you have set up your server, now what? Well, open up the browser of your
 
 ![Authentication Page](https://raw.githubusercontent.com/BoraOfficial/Storaj/main/img/Screenshot-Github-Storaj-1.png)
 
+Enter the password you've chosen. You should be shown the dashboard, something like such:
+<br>
+![Dashboard](https://raw.githubusercontent.com/BoraOfficial/Storaj/main/img/Screenshot-Github-Storaj-2.png)
+<br>
 The rest is for you to discover. Good luck!
 
 ---
