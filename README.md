@@ -33,6 +33,9 @@ And **BOOM** you're up and running!
 OK, now you have set up your server, now what? Well, open up the browser of your choice and navigate to ```http://127.0.0.1:5000```. There it is baby!!! You should be shown an authentication page, something like such:
 
 ![Authentication Page](https://raw.githubusercontent.com/BoraOfficial/Storaj/main/img/Screenshot-Github-Storaj-1.png)
+
+The rest is for you to discover. Good luck!
+
 ---
 
 Copyright © 2023 BoraOfficial. All rights reserved.
