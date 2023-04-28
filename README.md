@@ -27,6 +27,7 @@ python server.py
 ```
 
 And **BOOM** you're up and running!
+
 ---
 # Usage 
 
