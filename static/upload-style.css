@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  background-color: #2b2a33;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.upload {
+  width: 12vw;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #428bca;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  height: 8vh;
+  border: none;
+  cursor: pointer;
+  left: 9vw;
+  position: relative;
+}
+
+.progress {
+  margin: 20px auto;
+  padding: 0;
+  width: 90%;
+  height: 30px;
+  overflow: hidden;
+  background: #e5e5e5;
+  border-radius: 6px;
+}
+
+.bar {
+  position: relative;
+  float: left;
+  min-width: 1%;
+  height: 100%;
+  background: linear-gradient(-45deg, #A2C0F9 25%, #6495ed 25%, #6495ed 50%, #A2C0F9 50%, #A2C0F9 75%, #6495ed 75%, #6495ed);
+  background-size: 28px 28px;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 56px 56px;
+  }
+}
+
+.percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-family: tahoma, arial, helvetica;
+  font-size: 12px;
+  color: white;
+}
+
+h1 {
+  right: 2vw;
+  position: relative;
+  font-size: 48px;
+  top: -5vh;
+}
+
+
+
+.drop {
+  top: -10em;
+  right: -6.5vw;
+  width: 7.5em;
+  margin: 5em auto;
+  font-family: 'Roboto', sans-serif;
+  color: #86919a;
+  text-transform: uppercase;
+  position: relative;
+  transition: width 0.5s;
+  will-change: width;
+}
+.drop .option {
+  padding: 1em;
+  cursor: pointer;
+  background-color: #36353c;
+  text-align: start;
+}
+.drop .option:not(.active) {
+  display: none;
+  opacity: 0;
+  transform: translateY(-50%);
+}
+.drop.visible {
+
+  width: 24em;
+}
+.drop.visible:before, .drop.visible:after {
+  border-color: #fff;
+}
+.drop.visible:before {
+  opacity: 0;
+}
+.drop.visible:after {
+  opacity: 1;
+}
+.drop.visible .option {
+  color: #fff;
+  display: block;
+}
+.drop.opacity .option {
+  transform: translateZ(0);
+  opacity: 1;
+}
+
+.drop.withBG .option {
+  transition: background-color 0.1s;
+}
+.drop.withBG .option:not(.placeholder):hover {
+  background-color: #47464d;
+}
+.drop.withBG .option:not(.placeholder).active {
+  background-color: #36353c;
+}
+.drop:after, .drop:before {
+  content: "";
+  position: absolute;
+  top: 1.5em;
+  right: 1em;
+  width: 0.75em;
+  height: 0.75em;
+  border: 0.2em solid #86919a;
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+  transition: opacity 0.2s;
+}
+.drop:before {
+  border-left: none;
+  border-top: none;
+  top: 1.2em;
+}
+.drop:after {
+  border-right: none;
+  border-bottom: none;
+  opacity: 0;
+}
+
+.mini-hack {
+  opacity: 0;
+  transform: translateY(-50%);
+}

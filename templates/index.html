@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='jquery.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='jquery.cookie.min.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <title>Home | Storaj</title>
+</head>
+<body>
+    <div class="container">
+        <div class="account">
+            <img class="user-picture" src="{{ url_for('static', filename='user.png') }}" style="width: 35px; height:35px;">
+            <p id="username">Profile</p>
+        </div>
+        <hr style="position: relative;top: -5vh;">
+        <div class="dashboard">
+            <img class="dashboard-picture" src="{{ url_for('static', filename='dashboard.png') }}" style="width: 35px; height:35px;">
+            <p class="dashboard-text" onclick="changeFrame(this)">Dashboard</p>
+        </div>
+        <hr style="position: relative;top: -7vh;">
+        <div class="my-files">
+            <img class="files-picture" src="{{ url_for('static', filename='folder.png') }}" style="width: 35px; height:35px;">
+            <p class="files-text" onclick="changeFrame(this)">My Files</p>
+        </div>
+        <hr style="position: relative;top: -7vh;">
+        <div class="upload">
+            <img class="upload-picture" src="{{ url_for('static', filename='upload.png') }}" style="width: 35px; height:35px;">
+            <p class="upload-text" onclick="changeFrame(this)">Upload</p>
+        </div>
+        <hr style="position: relative;top: -7vh;">
+    </div>
+    <iframe id="frame" style="position: absolute;top: 0;right: 0;border: none;width: 84.4vw;height: 100vh;"></iframe>
+    
+</body>
+</html>

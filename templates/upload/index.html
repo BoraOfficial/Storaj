@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload | Storaj</title>
+    <script src="{{ url_for('static', filename='jquery.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='upload-style.css') }}">
+	<script src="{{ url_for('static', filename='upload-script.js') }}" defer></script>
+
+</head>
+<body>
+
+    <center>
+      <div>
+        <h1 style="color: #42414d;">Upload !????</h1>
+
+        <div class="drop">
+          <div class="option active placeholder" data-value="placeholder">
+            Choose
+          </div>
+          <div class="option" data-value="folder">
+            Folders
+          </div>
+          <div class="option" data-value="file">
+            Files
+          </div>
+  
+        </div>
+      </div>
+
+
+        <div id="uploader" style="visibility: hidden;">
+          <label onclick="setupEnv()" for="upload" class="upload" style="top: 30vh;position: absolute;transform: translateX(280%);">Upload</label>
+          <input type="file" id="upload" name="upload" style="visibility: hidden;" onchange="uploadFile()">
+          <div class="progress" id="progressBar" style="visibility: hidden;">
+              <div class="bar" style="width:0%;">
+              </div>
+          </div>
+          <p id="status" style="color: #4d4c57;"></p>
+        </div>
+
+
+        
+
+
+
+    </center>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,6250 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+
+body {
+  background-color: #2b2a33;
+  color: white;
+}
+
+.container {
+  display: flex;
+}
+
+.dynamic-pie__container {
+  top: 25vh;
+  position: relative;
+  right: 10.5vw;
+}
+.title {
+  font-size: 2.5rem;
+  font-family: 'Prompt', sans-serif;
+  right: -16vw;
+  position: relative;
+  top: 5vh;
+}
+.dynamic-pie__chart {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  font-size: 24px;
+  font-family: "Lato", sans-serif;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0px 20px white;
+  overflow: hidden;
+}
+.dynamic-pie__chart:before {
+  content: attr(data-percentage) "%";
+  position: absolute;
+  display: block;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  opacity: 0;
+  border-radius: 50%;
+  transition: opacity 0s linear 0s;
+}
+.dynamic-pie__percentage {
+  position: absolute;
+  top: 5rem;
+  left: 3rem;
+  z-index: 1;
+  height: 2rem;
+  width: 200px;
+  font-size: 2rem;
+  line-height: 2rem;
+  text-indent: 53px;
+  overflow: hidden;
+  visibility: visibile;
+  transition: visibility 0s linear 0s;
+}
+.dynamic-pie__percentage:before, .dynamic-pie__percentage:after {
+  position: absolute;
+  top: 0px;
+  font-size: 2rem;
+  line-height: 2rem;
+  white-space: pre;
+  text-indent: 0;
+}
+.dynamic-pie__percentage:before {
+  content: "0 \a 1 \a 2 \a 3 \a 4 \a 5 \a 6 \a 7 \a 8 \a 9";
+  left: 26px;
+}
+.dynamic-pie__percentage:after {
+  content: "0 \a 1 \a 2 \a 3 \a 4 \a 5 \a 6 \a 7 \a 8 \a 9";
+  left: 40px;
+}
+.dynamic-pie__completed {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dynamic-pie__completed:before, .dynamic-pie__completed:after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: solid 20px #00aeef;
+  border-radius: 50%;
+}
+.dynamic-pie__completed:before {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__completed:after {
+  clip: rect(0 100px 200px 0);
+}
+
+.dynamic-pie__chart[data-percentage="0"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="0"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="0"] .dynamic-pie__percentage:before {
+  animation: tens-0 2s 1 steps(0, end);
+}
+.dynamic-pie__chart[data-percentage="0"] .dynamic-pie__percentage:after {
+  animation: ones-0 20s 0.1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="0"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="0"] .dynamic-pie__completed:before {
+  transform: rotate(-180deg);
+  animation: first-0 2s 1 ease-out;
+}
+@keyframes tens-0 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-0rem);
+  }
+}
+@keyframes ones-0 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-0 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-0 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-180deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="1"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="1"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="1"] .dynamic-pie__percentage:before {
+  animation: tens-1 2s 1 steps(0, end);
+}
+.dynamic-pie__chart[data-percentage="1"] .dynamic-pie__percentage:after {
+  animation: ones-1 10s 0.2 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="1"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="1"] .dynamic-pie__completed:before {
+  transform: rotate(-176.4deg);
+  animation: first-1 2s 1 ease-out;
+}
+@keyframes tens-1 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-0rem);
+  }
+}
+@keyframes ones-1 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-1 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-1 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-176.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="2"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="2"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="2"] .dynamic-pie__percentage:before {
+  animation: tens-2 2s 1 steps(0, end);
+}
+.dynamic-pie__chart[data-percentage="2"] .dynamic-pie__percentage:after {
+  animation: ones-2 6.6666666667s 0.3 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="2"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="2"] .dynamic-pie__completed:before {
+  transform: rotate(-172.8deg);
+  animation: first-2 2s 1 ease-out;
+}
+@keyframes tens-2 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-0rem);
+  }
+}
+@keyframes ones-2 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-2 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-2 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-172.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="3"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="3"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="3"] .dynamic-pie__percentage:before {
+  animation: tens-3 2s 1 steps(0, end);
+}
+.dynamic-pie__chart[data-percentage="3"] .dynamic-pie__percentage:after {
+  animation: ones-3 5s 0.4 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="3"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="3"] .dynamic-pie__completed:before {
+  transform: rotate(-169.2deg);
+  animation: first-3 2s 1 ease-out;
+}
+@keyframes tens-3 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-0rem);
+  }
+}
+@keyframes ones-3 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-3 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-3 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-169.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="4"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="4"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="4"] .dynamic-pie__percentage:before {
+  animation: tens-4 2s 1 steps(1, end);
+}
+.dynamic-pie__chart[data-percentage="4"] .dynamic-pie__percentage:after {
+  animation: ones-4 4s 0.5 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="4"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="4"] .dynamic-pie__completed:before {
+  transform: rotate(-165.6deg);
+  animation: first-4 2s 1 ease-out;
+}
+@keyframes tens-4 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes ones-4 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-4 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-4 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-165.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="5"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="5"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="5"] .dynamic-pie__percentage:before {
+  animation: tens-5 2s 1 steps(1, end);
+}
+.dynamic-pie__chart[data-percentage="5"] .dynamic-pie__percentage:after {
+  animation: ones-5 3.3333333333s 0.6 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="5"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="5"] .dynamic-pie__completed:before {
+  transform: rotate(-162deg);
+  animation: first-5 2s 1 ease-out;
+}
+@keyframes tens-5 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes ones-5 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-5 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-5 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-162deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="6"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="6"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="6"] .dynamic-pie__percentage:before {
+  animation: tens-6 2s 1 steps(1, end);
+}
+.dynamic-pie__chart[data-percentage="6"] .dynamic-pie__percentage:after {
+  animation: ones-6 2.8571428571s 0.7 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="6"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="6"] .dynamic-pie__completed:before {
+  transform: rotate(-158.4deg);
+  animation: first-6 2s 1 ease-out;
+}
+@keyframes tens-6 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes ones-6 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-6 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-6 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-158.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="7"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="7"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="7"] .dynamic-pie__percentage:before {
+  animation: tens-7 2s 1 steps(1, end);
+}
+.dynamic-pie__chart[data-percentage="7"] .dynamic-pie__percentage:after {
+  animation: ones-7 2.5s 0.8 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="7"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="7"] .dynamic-pie__completed:before {
+  transform: rotate(-154.8deg);
+  animation: first-7 2s 1 ease-out;
+}
+@keyframes tens-7 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes ones-7 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-7 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-7 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-154.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="8"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="8"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="8"] .dynamic-pie__percentage:before {
+  animation: tens-8 2s 1 steps(1, end);
+}
+.dynamic-pie__chart[data-percentage="8"] .dynamic-pie__percentage:after {
+  animation: ones-8 2.2222222222s 0.9 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="8"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="8"] .dynamic-pie__completed:before {
+  transform: rotate(-151.2deg);
+  animation: first-8 2s 1 ease-out;
+}
+@keyframes tens-8 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes ones-8 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-8 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-8 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-151.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="9"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="9"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="9"] .dynamic-pie__percentage:before {
+  animation: tens-9 2s 1 steps(1, end);
+}
+.dynamic-pie__chart[data-percentage="9"] .dynamic-pie__percentage:after {
+  animation: ones-9 2s 1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="9"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="9"] .dynamic-pie__completed:before {
+  transform: rotate(-147.6deg);
+  animation: first-9 2s 1 ease-out;
+}
+@keyframes tens-9 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes ones-9 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-9 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-9 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-147.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="10"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="10"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="10"] .dynamic-pie__percentage:before {
+  animation: tens-10 2s 1 steps(1, end);
+}
+.dynamic-pie__chart[data-percentage="10"] .dynamic-pie__percentage:after {
+  animation: ones-10 1.8181818182s 1.1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="10"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="10"] .dynamic-pie__completed:before {
+  transform: rotate(-144deg);
+  animation: first-10 2s 1 ease-out;
+}
+@keyframes tens-10 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes ones-10 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-10 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-10 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-144deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="11"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="11"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="11"] .dynamic-pie__percentage:before {
+  animation: tens-11 2s 1 steps(1, end);
+}
+.dynamic-pie__chart[data-percentage="11"] .dynamic-pie__percentage:after {
+  animation: ones-11 1.6666666667s 1.2 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="11"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="11"] .dynamic-pie__completed:before {
+  transform: rotate(-140.4deg);
+  animation: first-11 2s 1 ease-out;
+}
+@keyframes tens-11 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes ones-11 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-11 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-11 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-140.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="12"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="12"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="12"] .dynamic-pie__percentage:before {
+  animation: tens-12 2s 1 steps(1, end);
+}
+.dynamic-pie__chart[data-percentage="12"] .dynamic-pie__percentage:after {
+  animation: ones-12 1.5384615385s 1.3 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="12"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="12"] .dynamic-pie__completed:before {
+  transform: rotate(-136.8deg);
+  animation: first-12 2s 1 ease-out;
+}
+@keyframes tens-12 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes ones-12 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-12 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-12 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-136.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="13"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="13"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="13"] .dynamic-pie__percentage:before {
+  animation: tens-13 2s 1 steps(1, end);
+}
+.dynamic-pie__chart[data-percentage="13"] .dynamic-pie__percentage:after {
+  animation: ones-13 1.4285714286s 1.4 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="13"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="13"] .dynamic-pie__completed:before {
+  transform: rotate(-133.2deg);
+  animation: first-13 2s 1 ease-out;
+}
+@keyframes tens-13 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes ones-13 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-13 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-13 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-133.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="14"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="14"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="14"] .dynamic-pie__percentage:before {
+  animation: tens-14 2s 1 steps(2, end);
+}
+.dynamic-pie__chart[data-percentage="14"] .dynamic-pie__percentage:after {
+  animation: ones-14 1.3333333333s 1.5 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="14"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="14"] .dynamic-pie__completed:before {
+  transform: rotate(-129.6deg);
+  animation: first-14 2s 1 ease-out;
+}
+@keyframes tens-14 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4rem);
+  }
+}
+@keyframes ones-14 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-14 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-14 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-129.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="15"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="15"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="15"] .dynamic-pie__percentage:before {
+  animation: tens-15 2s 1 steps(2, end);
+}
+.dynamic-pie__chart[data-percentage="15"] .dynamic-pie__percentage:after {
+  animation: ones-15 1.25s 1.6 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="15"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="15"] .dynamic-pie__completed:before {
+  transform: rotate(-126deg);
+  animation: first-15 2s 1 ease-out;
+}
+@keyframes tens-15 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4rem);
+  }
+}
+@keyframes ones-15 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-15 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-15 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-126deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="16"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="16"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="16"] .dynamic-pie__percentage:before {
+  animation: tens-16 2s 1 steps(2, end);
+}
+.dynamic-pie__chart[data-percentage="16"] .dynamic-pie__percentage:after {
+  animation: ones-16 1.1764705882s 1.7 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="16"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="16"] .dynamic-pie__completed:before {
+  transform: rotate(-122.4deg);
+  animation: first-16 2s 1 ease-out;
+}
+@keyframes tens-16 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4rem);
+  }
+}
+@keyframes ones-16 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-16 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-16 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-122.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="17"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="17"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="17"] .dynamic-pie__percentage:before {
+  animation: tens-17 2s 1 steps(2, end);
+}
+.dynamic-pie__chart[data-percentage="17"] .dynamic-pie__percentage:after {
+  animation: ones-17 1.1111111111s 1.8 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="17"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="17"] .dynamic-pie__completed:before {
+  transform: rotate(-118.8deg);
+  animation: first-17 2s 1 ease-out;
+}
+@keyframes tens-17 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4rem);
+  }
+}
+@keyframes ones-17 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-17 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-17 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-118.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="18"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="18"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="18"] .dynamic-pie__percentage:before {
+  animation: tens-18 2s 1 steps(2, end);
+}
+.dynamic-pie__chart[data-percentage="18"] .dynamic-pie__percentage:after {
+  animation: ones-18 1.0526315789s 1.9 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="18"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="18"] .dynamic-pie__completed:before {
+  transform: rotate(-115.2deg);
+  animation: first-18 2s 1 ease-out;
+}
+@keyframes tens-18 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4rem);
+  }
+}
+@keyframes ones-18 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-18 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-18 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-115.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="19"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="19"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="19"] .dynamic-pie__percentage:before {
+  animation: tens-19 2s 1 steps(2, end);
+}
+.dynamic-pie__chart[data-percentage="19"] .dynamic-pie__percentage:after {
+  animation: ones-19 1s 2 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="19"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="19"] .dynamic-pie__completed:before {
+  transform: rotate(-111.6deg);
+  animation: first-19 2s 1 ease-out;
+}
+@keyframes tens-19 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4rem);
+  }
+}
+@keyframes ones-19 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-19 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-19 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-111.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="20"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="20"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="20"] .dynamic-pie__percentage:before {
+  animation: tens-20 2s 1 steps(2, end);
+}
+.dynamic-pie__chart[data-percentage="20"] .dynamic-pie__percentage:after {
+  animation: ones-20 0.9523809524s 2.1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="20"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="20"] .dynamic-pie__completed:before {
+  transform: rotate(-108deg);
+  animation: first-20 2s 1 ease-out;
+}
+@keyframes tens-20 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4rem);
+  }
+}
+@keyframes ones-20 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-20 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-20 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-108deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="21"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="21"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="21"] .dynamic-pie__percentage:before {
+  animation: tens-21 2s 1 steps(2, end);
+}
+.dynamic-pie__chart[data-percentage="21"] .dynamic-pie__percentage:after {
+  animation: ones-21 0.9090909091s 2.2 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="21"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="21"] .dynamic-pie__completed:before {
+  transform: rotate(-104.4deg);
+  animation: first-21 2s 1 ease-out;
+}
+@keyframes tens-21 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4rem);
+  }
+}
+@keyframes ones-21 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-21 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-21 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-104.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="22"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="22"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="22"] .dynamic-pie__percentage:before {
+  animation: tens-22 2s 1 steps(2, end);
+}
+.dynamic-pie__chart[data-percentage="22"] .dynamic-pie__percentage:after {
+  animation: ones-22 0.8695652174s 2.3 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="22"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="22"] .dynamic-pie__completed:before {
+  transform: rotate(-100.8deg);
+  animation: first-22 2s 1 ease-out;
+}
+@keyframes tens-22 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4rem);
+  }
+}
+@keyframes ones-22 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-22 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-22 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-100.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="23"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="23"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="23"] .dynamic-pie__percentage:before {
+  animation: tens-23 2s 1 steps(2, end);
+}
+.dynamic-pie__chart[data-percentage="23"] .dynamic-pie__percentage:after {
+  animation: ones-23 0.8333333333s 2.4 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="23"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="23"] .dynamic-pie__completed:before {
+  transform: rotate(-97.2deg);
+  animation: first-23 2s 1 ease-out;
+}
+@keyframes tens-23 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-4rem);
+  }
+}
+@keyframes ones-23 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-23 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-23 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-97.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="24"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="24"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="24"] .dynamic-pie__percentage:before {
+  animation: tens-24 2s 1 steps(3, end);
+}
+.dynamic-pie__chart[data-percentage="24"] .dynamic-pie__percentage:after {
+  animation: ones-24 0.8s 2.5 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="24"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="24"] .dynamic-pie__completed:before {
+  transform: rotate(-93.6deg);
+  animation: first-24 2s 1 ease-out;
+}
+@keyframes tens-24 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6rem);
+  }
+}
+@keyframes ones-24 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-24 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-24 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-93.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="25"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="25"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="25"] .dynamic-pie__percentage:before {
+  animation: tens-25 2s 1 steps(3, end);
+}
+.dynamic-pie__chart[data-percentage="25"] .dynamic-pie__percentage:after {
+  animation: ones-25 0.7692307692s 2.6 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="25"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="25"] .dynamic-pie__completed:before {
+  transform: rotate(-90deg);
+  animation: first-25 2s 1 ease-out;
+}
+@keyframes tens-25 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6rem);
+  }
+}
+@keyframes ones-25 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-25 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-25 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-90deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="26"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="26"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="26"] .dynamic-pie__percentage:before {
+  animation: tens-26 2s 1 steps(3, end);
+}
+.dynamic-pie__chart[data-percentage="26"] .dynamic-pie__percentage:after {
+  animation: ones-26 0.7407407407s 2.7 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="26"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="26"] .dynamic-pie__completed:before {
+  transform: rotate(-86.4deg);
+  animation: first-26 2s 1 ease-out;
+}
+@keyframes tens-26 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6rem);
+  }
+}
+@keyframes ones-26 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-26 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-26 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-86.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="27"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="27"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="27"] .dynamic-pie__percentage:before {
+  animation: tens-27 2s 1 steps(3, end);
+}
+.dynamic-pie__chart[data-percentage="27"] .dynamic-pie__percentage:after {
+  animation: ones-27 0.7142857143s 2.8 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="27"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="27"] .dynamic-pie__completed:before {
+  transform: rotate(-82.8deg);
+  animation: first-27 2s 1 ease-out;
+}
+@keyframes tens-27 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6rem);
+  }
+}
+@keyframes ones-27 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-27 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-27 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-82.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="28"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="28"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="28"] .dynamic-pie__percentage:before {
+  animation: tens-28 2s 1 steps(3, end);
+}
+.dynamic-pie__chart[data-percentage="28"] .dynamic-pie__percentage:after {
+  animation: ones-28 0.6896551724s 2.9 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="28"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="28"] .dynamic-pie__completed:before {
+  transform: rotate(-79.2deg);
+  animation: first-28 2s 1 ease-out;
+}
+@keyframes tens-28 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6rem);
+  }
+}
+@keyframes ones-28 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-28 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-28 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-79.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="29"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="29"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="29"] .dynamic-pie__percentage:before {
+  animation: tens-29 2s 1 steps(3, end);
+}
+.dynamic-pie__chart[data-percentage="29"] .dynamic-pie__percentage:after {
+  animation: ones-29 0.6666666667s 3 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="29"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="29"] .dynamic-pie__completed:before {
+  transform: rotate(-75.6deg);
+  animation: first-29 2s 1 ease-out;
+}
+@keyframes tens-29 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6rem);
+  }
+}
+@keyframes ones-29 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-29 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-29 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-75.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="30"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="30"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="30"] .dynamic-pie__percentage:before {
+  animation: tens-30 2s 1 steps(3, end);
+}
+.dynamic-pie__chart[data-percentage="30"] .dynamic-pie__percentage:after {
+  animation: ones-30 0.6451612903s 3.1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="30"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="30"] .dynamic-pie__completed:before {
+  transform: rotate(-72deg);
+  animation: first-30 2s 1 ease-out;
+}
+@keyframes tens-30 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6rem);
+  }
+}
+@keyframes ones-30 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-30 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-30 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-72deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="31"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="31"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="31"] .dynamic-pie__percentage:before {
+  animation: tens-31 2s 1 steps(3, end);
+}
+.dynamic-pie__chart[data-percentage="31"] .dynamic-pie__percentage:after {
+  animation: ones-31 0.625s 3.2 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="31"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="31"] .dynamic-pie__completed:before {
+  transform: rotate(-68.4deg);
+  animation: first-31 2s 1 ease-out;
+}
+@keyframes tens-31 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6rem);
+  }
+}
+@keyframes ones-31 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-31 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-31 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-68.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="32"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="32"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="32"] .dynamic-pie__percentage:before {
+  animation: tens-32 2s 1 steps(3, end);
+}
+.dynamic-pie__chart[data-percentage="32"] .dynamic-pie__percentage:after {
+  animation: ones-32 0.6060606061s 3.3 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="32"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="32"] .dynamic-pie__completed:before {
+  transform: rotate(-64.8deg);
+  animation: first-32 2s 1 ease-out;
+}
+@keyframes tens-32 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6rem);
+  }
+}
+@keyframes ones-32 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-32 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-32 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-64.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="33"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="33"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="33"] .dynamic-pie__percentage:before {
+  animation: tens-33 2s 1 steps(3, end);
+}
+.dynamic-pie__chart[data-percentage="33"] .dynamic-pie__percentage:after {
+  animation: ones-33 0.5882352941s 3.4 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="33"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="33"] .dynamic-pie__completed:before {
+  transform: rotate(-61.2deg);
+  animation: first-33 2s 1 ease-out;
+}
+@keyframes tens-33 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6rem);
+  }
+}
+@keyframes ones-33 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-33 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-33 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-61.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="34"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="34"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="34"] .dynamic-pie__percentage:before {
+  animation: tens-34 2s 1 steps(4, end);
+}
+.dynamic-pie__chart[data-percentage="34"] .dynamic-pie__percentage:after {
+  animation: ones-34 0.5714285714s 3.5 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="34"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="34"] .dynamic-pie__completed:before {
+  transform: rotate(-57.6deg);
+  animation: first-34 2s 1 ease-out;
+}
+@keyframes tens-34 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8rem);
+  }
+}
+@keyframes ones-34 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-34 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-34 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-57.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="35"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="35"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="35"] .dynamic-pie__percentage:before {
+  animation: tens-35 2s 1 steps(4, end);
+}
+.dynamic-pie__chart[data-percentage="35"] .dynamic-pie__percentage:after {
+  animation: ones-35 0.5555555556s 3.6 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="35"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="35"] .dynamic-pie__completed:before {
+  transform: rotate(-54deg);
+  animation: first-35 2s 1 ease-out;
+}
+@keyframes tens-35 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8rem);
+  }
+}
+@keyframes ones-35 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-35 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-35 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-54deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="36"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="36"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="36"] .dynamic-pie__percentage:before {
+  animation: tens-36 2s 1 steps(4, end);
+}
+.dynamic-pie__chart[data-percentage="36"] .dynamic-pie__percentage:after {
+  animation: ones-36 0.5405405405s 3.7 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="36"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="36"] .dynamic-pie__completed:before {
+  transform: rotate(-50.4deg);
+  animation: first-36 2s 1 ease-out;
+}
+@keyframes tens-36 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8rem);
+  }
+}
+@keyframes ones-36 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-36 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-36 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-50.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="37"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="37"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="37"] .dynamic-pie__percentage:before {
+  animation: tens-37 2s 1 steps(4, end);
+}
+.dynamic-pie__chart[data-percentage="37"] .dynamic-pie__percentage:after {
+  animation: ones-37 0.5263157895s 3.8 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="37"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="37"] .dynamic-pie__completed:before {
+  transform: rotate(-46.8deg);
+  animation: first-37 2s 1 ease-out;
+}
+@keyframes tens-37 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8rem);
+  }
+}
+@keyframes ones-37 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-37 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-37 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-46.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="38"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="38"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="38"] .dynamic-pie__percentage:before {
+  animation: tens-38 2s 1 steps(4, end);
+}
+.dynamic-pie__chart[data-percentage="38"] .dynamic-pie__percentage:after {
+  animation: ones-38 0.5128205128s 3.9 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="38"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="38"] .dynamic-pie__completed:before {
+  transform: rotate(-43.2deg);
+  animation: first-38 2s 1 ease-out;
+}
+@keyframes tens-38 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8rem);
+  }
+}
+@keyframes ones-38 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-38 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-38 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-43.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="39"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="39"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="39"] .dynamic-pie__percentage:before {
+  animation: tens-39 2s 1 steps(4, end);
+}
+.dynamic-pie__chart[data-percentage="39"] .dynamic-pie__percentage:after {
+  animation: ones-39 0.5s 4 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="39"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="39"] .dynamic-pie__completed:before {
+  transform: rotate(-39.6deg);
+  animation: first-39 2s 1 ease-out;
+}
+@keyframes tens-39 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8rem);
+  }
+}
+@keyframes ones-39 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-39 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-39 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-39.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="40"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="40"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="40"] .dynamic-pie__percentage:before {
+  animation: tens-40 2s 1 steps(4, end);
+}
+.dynamic-pie__chart[data-percentage="40"] .dynamic-pie__percentage:after {
+  animation: ones-40 0.487804878s 4.1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="40"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="40"] .dynamic-pie__completed:before {
+  transform: rotate(-36deg);
+  animation: first-40 2s 1 ease-out;
+}
+@keyframes tens-40 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8rem);
+  }
+}
+@keyframes ones-40 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-40 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-40 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-36deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="41"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="41"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="41"] .dynamic-pie__percentage:before {
+  animation: tens-41 2s 1 steps(4, end);
+}
+.dynamic-pie__chart[data-percentage="41"] .dynamic-pie__percentage:after {
+  animation: ones-41 0.4761904762s 4.2 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="41"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="41"] .dynamic-pie__completed:before {
+  transform: rotate(-32.4deg);
+  animation: first-41 2s 1 ease-out;
+}
+@keyframes tens-41 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8rem);
+  }
+}
+@keyframes ones-41 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-41 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-41 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-32.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="42"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="42"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="42"] .dynamic-pie__percentage:before {
+  animation: tens-42 2s 1 steps(4, end);
+}
+.dynamic-pie__chart[data-percentage="42"] .dynamic-pie__percentage:after {
+  animation: ones-42 0.4651162791s 4.3 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="42"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="42"] .dynamic-pie__completed:before {
+  transform: rotate(-28.8deg);
+  animation: first-42 2s 1 ease-out;
+}
+@keyframes tens-42 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8rem);
+  }
+}
+@keyframes ones-42 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-42 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-42 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-28.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="43"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="43"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="43"] .dynamic-pie__percentage:before {
+  animation: tens-43 2s 1 steps(4, end);
+}
+.dynamic-pie__chart[data-percentage="43"] .dynamic-pie__percentage:after {
+  animation: ones-43 0.4545454545s 4.4 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="43"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="43"] .dynamic-pie__completed:before {
+  transform: rotate(-25.2deg);
+  animation: first-43 2s 1 ease-out;
+}
+@keyframes tens-43 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8rem);
+  }
+}
+@keyframes ones-43 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-43 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-43 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-25.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="44"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="44"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="44"] .dynamic-pie__percentage:before {
+  animation: tens-44 2s 1 steps(5, end);
+}
+.dynamic-pie__chart[data-percentage="44"] .dynamic-pie__percentage:after {
+  animation: ones-44 0.4444444444s 4.5 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="44"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="44"] .dynamic-pie__completed:before {
+  transform: rotate(-21.6deg);
+  animation: first-44 2s 1 ease-out;
+}
+@keyframes tens-44 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+@keyframes ones-44 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-44 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-44 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-21.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="45"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="45"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="45"] .dynamic-pie__percentage:before {
+  animation: tens-45 2s 1 steps(5, end);
+}
+.dynamic-pie__chart[data-percentage="45"] .dynamic-pie__percentage:after {
+  animation: ones-45 0.4347826087s 4.6 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="45"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="45"] .dynamic-pie__completed:before {
+  transform: rotate(-18deg);
+  animation: first-45 2s 1 ease-out;
+}
+@keyframes tens-45 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+@keyframes ones-45 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-45 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-45 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-18deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="46"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="46"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="46"] .dynamic-pie__percentage:before {
+  animation: tens-46 2s 1 steps(5, end);
+}
+.dynamic-pie__chart[data-percentage="46"] .dynamic-pie__percentage:after {
+  animation: ones-46 0.4255319149s 4.7 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="46"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="46"] .dynamic-pie__completed:before {
+  transform: rotate(-14.4deg);
+  animation: first-46 2s 1 ease-out;
+}
+@keyframes tens-46 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+@keyframes ones-46 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-46 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-46 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-14.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="47"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="47"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="47"] .dynamic-pie__percentage:before {
+  animation: tens-47 2s 1 steps(5, end);
+}
+.dynamic-pie__chart[data-percentage="47"] .dynamic-pie__percentage:after {
+  animation: ones-47 0.4166666667s 4.8 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="47"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="47"] .dynamic-pie__completed:before {
+  transform: rotate(-10.8deg);
+  animation: first-47 2s 1 ease-out;
+}
+@keyframes tens-47 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+@keyframes ones-47 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-47 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-47 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-10.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="48"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="48"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="48"] .dynamic-pie__percentage:before {
+  animation: tens-48 2s 1 steps(5, end);
+}
+.dynamic-pie__chart[data-percentage="48"] .dynamic-pie__percentage:after {
+  animation: ones-48 0.4081632653s 4.9 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="48"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="48"] .dynamic-pie__completed:before {
+  transform: rotate(-7.2deg);
+  animation: first-48 2s 1 ease-out;
+}
+@keyframes tens-48 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+@keyframes ones-48 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-48 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-48 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-7.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="49"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="49"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="49"] .dynamic-pie__percentage:before {
+  animation: tens-49 2s 1 steps(5, end);
+}
+.dynamic-pie__chart[data-percentage="49"] .dynamic-pie__percentage:after {
+  animation: ones-49 0.4s 5 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="49"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="49"] .dynamic-pie__completed:before {
+  transform: rotate(-3.6deg);
+  animation: first-49 2s 1 ease-out;
+}
+@keyframes tens-49 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+@keyframes ones-49 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-49 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-49 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(-3.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="50"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="50"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="50"] .dynamic-pie__percentage:before {
+  animation: tens-50 2s 1 steps(5, end);
+}
+.dynamic-pie__chart[data-percentage="50"] .dynamic-pie__percentage:after {
+  animation: ones-50 0.3921568627s 5.1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="50"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 100px);
+}
+.dynamic-pie__chart[data-percentage="50"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-50 2s 1 ease-out;
+}
+@keyframes tens-50 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+@keyframes ones-50 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-50 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-50 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="51"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="51"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="51"] .dynamic-pie__percentage:before {
+  animation: tens-51 2s 1 steps(5, end);
+}
+.dynamic-pie__chart[data-percentage="51"] .dynamic-pie__percentage:after {
+  animation: ones-51 0.3846153846s 5.2 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="51"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-51 2s linear;
+}
+.dynamic-pie__chart[data-percentage="51"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-51 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="51"] .dynamic-pie__completed:after {
+  transform: rotate(-176.4deg);
+  animation: second-51 2s 1 ease-out;
+}
+@keyframes tens-51 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+@keyframes ones-51 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-51 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-51 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-51 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-176.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="52"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="52"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="52"] .dynamic-pie__percentage:before {
+  animation: tens-52 2s 1 steps(5, end);
+}
+.dynamic-pie__chart[data-percentage="52"] .dynamic-pie__percentage:after {
+  animation: ones-52 0.3773584906s 5.3 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="52"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-52 2s linear;
+}
+.dynamic-pie__chart[data-percentage="52"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-52 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="52"] .dynamic-pie__completed:after {
+  transform: rotate(-172.8deg);
+  animation: second-52 2s 1 ease-out;
+}
+@keyframes tens-52 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+@keyframes ones-52 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-52 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-52 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-52 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-172.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="53"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="53"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="53"] .dynamic-pie__percentage:before {
+  animation: tens-53 2s 1 steps(5, end);
+}
+.dynamic-pie__chart[data-percentage="53"] .dynamic-pie__percentage:after {
+  animation: ones-53 0.3703703704s 5.4 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="53"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-53 2s linear;
+}
+.dynamic-pie__chart[data-percentage="53"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-53 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="53"] .dynamic-pie__completed:after {
+  transform: rotate(-169.2deg);
+  animation: second-53 2s 1 ease-out;
+}
+@keyframes tens-53 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10rem);
+  }
+}
+@keyframes ones-53 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-53 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-53 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-53 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-169.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="54"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="54"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="54"] .dynamic-pie__percentage:before {
+  animation: tens-54 2s 1 steps(6, end);
+}
+.dynamic-pie__chart[data-percentage="54"] .dynamic-pie__percentage:after {
+  animation: ones-54 0.3636363636s 5.5 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="54"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-54 2s linear;
+}
+.dynamic-pie__chart[data-percentage="54"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-54 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="54"] .dynamic-pie__completed:after {
+  transform: rotate(-165.6deg);
+  animation: second-54 2s 1 ease-out;
+}
+@keyframes tens-54 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12rem);
+  }
+}
+@keyframes ones-54 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-54 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-54 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-54 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-165.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="55"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="55"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="55"] .dynamic-pie__percentage:before {
+  animation: tens-55 2s 1 steps(6, end);
+}
+.dynamic-pie__chart[data-percentage="55"] .dynamic-pie__percentage:after {
+  animation: ones-55 0.3571428571s 5.6 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="55"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-55 2s linear;
+}
+.dynamic-pie__chart[data-percentage="55"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-55 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="55"] .dynamic-pie__completed:after {
+  transform: rotate(-162deg);
+  animation: second-55 2s 1 ease-out;
+}
+@keyframes tens-55 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12rem);
+  }
+}
+@keyframes ones-55 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-55 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-55 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-55 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-162deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="56"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="56"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="56"] .dynamic-pie__percentage:before {
+  animation: tens-56 2s 1 steps(6, end);
+}
+.dynamic-pie__chart[data-percentage="56"] .dynamic-pie__percentage:after {
+  animation: ones-56 0.350877193s 5.7 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="56"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-56 2s linear;
+}
+.dynamic-pie__chart[data-percentage="56"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-56 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="56"] .dynamic-pie__completed:after {
+  transform: rotate(-158.4deg);
+  animation: second-56 2s 1 ease-out;
+}
+@keyframes tens-56 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12rem);
+  }
+}
+@keyframes ones-56 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-56 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-56 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-56 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-158.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="57"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="57"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="57"] .dynamic-pie__percentage:before {
+  animation: tens-57 2s 1 steps(6, end);
+}
+.dynamic-pie__chart[data-percentage="57"] .dynamic-pie__percentage:after {
+  animation: ones-57 0.3448275862s 5.8 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="57"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-57 2s linear;
+}
+.dynamic-pie__chart[data-percentage="57"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-57 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="57"] .dynamic-pie__completed:after {
+  transform: rotate(-154.8deg);
+  animation: second-57 2s 1 ease-out;
+}
+@keyframes tens-57 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12rem);
+  }
+}
+@keyframes ones-57 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-57 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-57 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-57 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-154.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="58"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="58"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="58"] .dynamic-pie__percentage:before {
+  animation: tens-58 2s 1 steps(6, end);
+}
+.dynamic-pie__chart[data-percentage="58"] .dynamic-pie__percentage:after {
+  animation: ones-58 0.3389830508s 5.9 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="58"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-58 2s linear;
+}
+.dynamic-pie__chart[data-percentage="58"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-58 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="58"] .dynamic-pie__completed:after {
+  transform: rotate(-151.2deg);
+  animation: second-58 2s 1 ease-out;
+}
+@keyframes tens-58 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12rem);
+  }
+}
+@keyframes ones-58 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-58 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-58 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-58 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-151.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="59"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="59"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="59"] .dynamic-pie__percentage:before {
+  animation: tens-59 2s 1 steps(6, end);
+}
+.dynamic-pie__chart[data-percentage="59"] .dynamic-pie__percentage:after {
+  animation: ones-59 0.3333333333s 6 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="59"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-59 2s linear;
+}
+.dynamic-pie__chart[data-percentage="59"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-59 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="59"] .dynamic-pie__completed:after {
+  transform: rotate(-147.6deg);
+  animation: second-59 2s 1 ease-out;
+}
+@keyframes tens-59 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12rem);
+  }
+}
+@keyframes ones-59 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-59 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-59 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-59 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-147.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="60"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="60"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="60"] .dynamic-pie__percentage:before {
+  animation: tens-60 2s 1 steps(6, end);
+}
+.dynamic-pie__chart[data-percentage="60"] .dynamic-pie__percentage:after {
+  animation: ones-60 0.3278688525s 6.1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="60"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-60 2s linear;
+}
+.dynamic-pie__chart[data-percentage="60"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-60 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="60"] .dynamic-pie__completed:after {
+  transform: rotate(-144deg);
+  animation: second-60 2s 1 ease-out;
+}
+@keyframes tens-60 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12rem);
+  }
+}
+@keyframes ones-60 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-60 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-60 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-60 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-144deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="61"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="61"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="61"] .dynamic-pie__percentage:before {
+  animation: tens-61 2s 1 steps(6, end);
+}
+.dynamic-pie__chart[data-percentage="61"] .dynamic-pie__percentage:after {
+  animation: ones-61 0.3225806452s 6.2 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="61"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-61 2s linear;
+}
+.dynamic-pie__chart[data-percentage="61"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-61 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="61"] .dynamic-pie__completed:after {
+  transform: rotate(-140.4deg);
+  animation: second-61 2s 1 ease-out;
+}
+@keyframes tens-61 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12rem);
+  }
+}
+@keyframes ones-61 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-61 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-61 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-61 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-140.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="62"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="62"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="62"] .dynamic-pie__percentage:before {
+  animation: tens-62 2s 1 steps(6, end);
+}
+.dynamic-pie__chart[data-percentage="62"] .dynamic-pie__percentage:after {
+  animation: ones-62 0.3174603175s 6.3 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="62"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-62 2s linear;
+}
+.dynamic-pie__chart[data-percentage="62"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-62 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="62"] .dynamic-pie__completed:after {
+  transform: rotate(-136.8deg);
+  animation: second-62 2s 1 ease-out;
+}
+@keyframes tens-62 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12rem);
+  }
+}
+@keyframes ones-62 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-62 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-62 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-62 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-136.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="63"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="63"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="63"] .dynamic-pie__percentage:before {
+  animation: tens-63 2s 1 steps(6, end);
+}
+.dynamic-pie__chart[data-percentage="63"] .dynamic-pie__percentage:after {
+  animation: ones-63 0.3125s 6.4 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="63"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-63 2s linear;
+}
+.dynamic-pie__chart[data-percentage="63"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-63 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="63"] .dynamic-pie__completed:after {
+  transform: rotate(-133.2deg);
+  animation: second-63 2s 1 ease-out;
+}
+@keyframes tens-63 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12rem);
+  }
+}
+@keyframes ones-63 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-63 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-63 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-63 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-133.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="64"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="64"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="64"] .dynamic-pie__percentage:before {
+  animation: tens-64 2s 1 steps(7, end);
+}
+.dynamic-pie__chart[data-percentage="64"] .dynamic-pie__percentage:after {
+  animation: ones-64 0.3076923077s 6.5 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="64"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-64 2s linear;
+}
+.dynamic-pie__chart[data-percentage="64"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-64 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="64"] .dynamic-pie__completed:after {
+  transform: rotate(-129.6deg);
+  animation: second-64 2s 1 ease-out;
+}
+@keyframes tens-64 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14rem);
+  }
+}
+@keyframes ones-64 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-64 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-64 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-64 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-129.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="65"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="65"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="65"] .dynamic-pie__percentage:before {
+  animation: tens-65 2s 1 steps(7, end);
+}
+.dynamic-pie__chart[data-percentage="65"] .dynamic-pie__percentage:after {
+  animation: ones-65 0.303030303s 6.6 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="65"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-65 2s linear;
+}
+.dynamic-pie__chart[data-percentage="65"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-65 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="65"] .dynamic-pie__completed:after {
+  transform: rotate(-126deg);
+  animation: second-65 2s 1 ease-out;
+}
+@keyframes tens-65 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14rem);
+  }
+}
+@keyframes ones-65 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-65 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-65 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-65 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-126deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="66"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="66"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="66"] .dynamic-pie__percentage:before {
+  animation: tens-66 2s 1 steps(7, end);
+}
+.dynamic-pie__chart[data-percentage="66"] .dynamic-pie__percentage:after {
+  animation: ones-66 0.2985074627s 6.7 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="66"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-66 2s linear;
+}
+.dynamic-pie__chart[data-percentage="66"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-66 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="66"] .dynamic-pie__completed:after {
+  transform: rotate(-122.4deg);
+  animation: second-66 2s 1 ease-out;
+}
+@keyframes tens-66 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14rem);
+  }
+}
+@keyframes ones-66 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-66 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-66 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-66 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-122.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="67"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="67"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="67"] .dynamic-pie__percentage:before {
+  animation: tens-67 2s 1 steps(7, end);
+}
+.dynamic-pie__chart[data-percentage="67"] .dynamic-pie__percentage:after {
+  animation: ones-67 0.2941176471s 6.8 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="67"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-67 2s linear;
+}
+.dynamic-pie__chart[data-percentage="67"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-67 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="67"] .dynamic-pie__completed:after {
+  transform: rotate(-118.8deg);
+  animation: second-67 2s 1 ease-out;
+}
+@keyframes tens-67 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14rem);
+  }
+}
+@keyframes ones-67 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-67 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-67 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-67 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-118.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="68"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="68"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="68"] .dynamic-pie__percentage:before {
+  animation: tens-68 2s 1 steps(7, end);
+}
+.dynamic-pie__chart[data-percentage="68"] .dynamic-pie__percentage:after {
+  animation: ones-68 0.2898550725s 6.9 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="68"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-68 2s linear;
+}
+.dynamic-pie__chart[data-percentage="68"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-68 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="68"] .dynamic-pie__completed:after {
+  transform: rotate(-115.2deg);
+  animation: second-68 2s 1 ease-out;
+}
+@keyframes tens-68 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14rem);
+  }
+}
+@keyframes ones-68 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-68 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-68 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-68 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-115.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="69"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="69"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="69"] .dynamic-pie__percentage:before {
+  animation: tens-69 2s 1 steps(7, end);
+}
+.dynamic-pie__chart[data-percentage="69"] .dynamic-pie__percentage:after {
+  animation: ones-69 0.2857142857s 7 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="69"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-69 2s linear;
+}
+.dynamic-pie__chart[data-percentage="69"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-69 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="69"] .dynamic-pie__completed:after {
+  transform: rotate(-111.6deg);
+  animation: second-69 2s 1 ease-out;
+}
+@keyframes tens-69 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14rem);
+  }
+}
+@keyframes ones-69 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-69 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-69 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-69 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-111.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="70"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="70"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="70"] .dynamic-pie__percentage:before {
+  animation: tens-70 2s 1 steps(7, end);
+}
+.dynamic-pie__chart[data-percentage="70"] .dynamic-pie__percentage:after {
+  animation: ones-70 0.2816901408s 7.1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="70"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-70 2s linear;
+}
+.dynamic-pie__chart[data-percentage="70"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-70 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="70"] .dynamic-pie__completed:after {
+  transform: rotate(-108deg);
+  animation: second-70 2s 1 ease-out;
+}
+@keyframes tens-70 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14rem);
+  }
+}
+@keyframes ones-70 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-70 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-70 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-70 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-108deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="71"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="71"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="71"] .dynamic-pie__percentage:before {
+  animation: tens-71 2s 1 steps(7, end);
+}
+.dynamic-pie__chart[data-percentage="71"] .dynamic-pie__percentage:after {
+  animation: ones-71 0.2777777778s 7.2 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="71"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-71 2s linear;
+}
+.dynamic-pie__chart[data-percentage="71"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-71 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="71"] .dynamic-pie__completed:after {
+  transform: rotate(-104.4deg);
+  animation: second-71 2s 1 ease-out;
+}
+@keyframes tens-71 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14rem);
+  }
+}
+@keyframes ones-71 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-71 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-71 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-71 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-104.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="72"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="72"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="72"] .dynamic-pie__percentage:before {
+  animation: tens-72 2s 1 steps(7, end);
+}
+.dynamic-pie__chart[data-percentage="72"] .dynamic-pie__percentage:after {
+  animation: ones-72 0.2739726027s 7.3 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="72"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-72 2s linear;
+}
+.dynamic-pie__chart[data-percentage="72"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-72 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="72"] .dynamic-pie__completed:after {
+  transform: rotate(-100.8deg);
+  animation: second-72 2s 1 ease-out;
+}
+@keyframes tens-72 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14rem);
+  }
+}
+@keyframes ones-72 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-72 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-72 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-72 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-100.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="73"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="73"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="73"] .dynamic-pie__percentage:before {
+  animation: tens-73 2s 1 steps(7, end);
+}
+.dynamic-pie__chart[data-percentage="73"] .dynamic-pie__percentage:after {
+  animation: ones-73 0.2702702703s 7.4 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="73"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-73 2s linear;
+}
+.dynamic-pie__chart[data-percentage="73"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-73 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="73"] .dynamic-pie__completed:after {
+  transform: rotate(-97.2deg);
+  animation: second-73 2s 1 ease-out;
+}
+@keyframes tens-73 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-14rem);
+  }
+}
+@keyframes ones-73 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-73 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-73 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-73 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-97.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="74"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="74"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="74"] .dynamic-pie__percentage:before {
+  animation: tens-74 2s 1 steps(8, end);
+}
+.dynamic-pie__chart[data-percentage="74"] .dynamic-pie__percentage:after {
+  animation: ones-74 0.2666666667s 7.5 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="74"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-74 2s linear;
+}
+.dynamic-pie__chart[data-percentage="74"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-74 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="74"] .dynamic-pie__completed:after {
+  transform: rotate(-93.6deg);
+  animation: second-74 2s 1 ease-out;
+}
+@keyframes tens-74 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-16rem);
+  }
+}
+@keyframes ones-74 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-74 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-74 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-74 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-93.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="75"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="75"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="75"] .dynamic-pie__percentage:before {
+  animation: tens-75 2s 1 steps(8, end);
+}
+.dynamic-pie__chart[data-percentage="75"] .dynamic-pie__percentage:after {
+  animation: ones-75 0.2631578947s 7.6 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="75"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-75 2s linear;
+}
+.dynamic-pie__chart[data-percentage="75"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-75 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="75"] .dynamic-pie__completed:after {
+  transform: rotate(-90deg);
+  animation: second-75 2s 1 ease-out;
+}
+@keyframes tens-75 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-16rem);
+  }
+}
+@keyframes ones-75 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-75 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-75 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-75 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="76"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="76"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="76"] .dynamic-pie__percentage:before {
+  animation: tens-76 2s 1 steps(8, end);
+}
+.dynamic-pie__chart[data-percentage="76"] .dynamic-pie__percentage:after {
+  animation: ones-76 0.2597402597s 7.7 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="76"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-76 2s linear;
+}
+.dynamic-pie__chart[data-percentage="76"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-76 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="76"] .dynamic-pie__completed:after {
+  transform: rotate(-86.4deg);
+  animation: second-76 2s 1 ease-out;
+}
+@keyframes tens-76 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-16rem);
+  }
+}
+@keyframes ones-76 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-76 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-76 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-76 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-86.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="77"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="77"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="77"] .dynamic-pie__percentage:before {
+  animation: tens-77 2s 1 steps(8, end);
+}
+.dynamic-pie__chart[data-percentage="77"] .dynamic-pie__percentage:after {
+  animation: ones-77 0.2564102564s 7.8 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="77"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-77 2s linear;
+}
+.dynamic-pie__chart[data-percentage="77"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-77 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="77"] .dynamic-pie__completed:after {
+  transform: rotate(-82.8deg);
+  animation: second-77 2s 1 ease-out;
+}
+@keyframes tens-77 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-16rem);
+  }
+}
+@keyframes ones-77 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-77 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-77 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-77 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-82.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="78"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="78"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="78"] .dynamic-pie__percentage:before {
+  animation: tens-78 2s 1 steps(8, end);
+}
+.dynamic-pie__chart[data-percentage="78"] .dynamic-pie__percentage:after {
+  animation: ones-78 0.253164557s 7.9 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="78"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-78 2s linear;
+}
+.dynamic-pie__chart[data-percentage="78"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-78 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="78"] .dynamic-pie__completed:after {
+  transform: rotate(-79.2deg);
+  animation: second-78 2s 1 ease-out;
+}
+@keyframes tens-78 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-16rem);
+  }
+}
+@keyframes ones-78 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-78 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-78 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-78 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-79.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="79"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="79"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="79"] .dynamic-pie__percentage:before {
+  animation: tens-79 2s 1 steps(8, end);
+}
+.dynamic-pie__chart[data-percentage="79"] .dynamic-pie__percentage:after {
+  animation: ones-79 0.25s 8 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="79"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-79 2s linear;
+}
+.dynamic-pie__chart[data-percentage="79"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-79 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="79"] .dynamic-pie__completed:after {
+  transform: rotate(-75.6deg);
+  animation: second-79 2s 1 ease-out;
+}
+@keyframes tens-79 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-16rem);
+  }
+}
+@keyframes ones-79 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-79 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-79 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-79 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-75.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="80"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="80"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="80"] .dynamic-pie__percentage:before {
+  animation: tens-80 2s 1 steps(8, end);
+}
+.dynamic-pie__chart[data-percentage="80"] .dynamic-pie__percentage:after {
+  animation: ones-80 0.2469135802s 8.1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="80"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-80 2s linear;
+}
+.dynamic-pie__chart[data-percentage="80"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-80 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="80"] .dynamic-pie__completed:after {
+  transform: rotate(-72deg);
+  animation: second-80 2s 1 ease-out;
+}
+@keyframes tens-80 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-16rem);
+  }
+}
+@keyframes ones-80 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-80 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-80 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-80 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-72deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="81"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="81"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="81"] .dynamic-pie__percentage:before {
+  animation: tens-81 2s 1 steps(8, end);
+}
+.dynamic-pie__chart[data-percentage="81"] .dynamic-pie__percentage:after {
+  animation: ones-81 0.243902439s 8.2 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="81"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-81 2s linear;
+}
+.dynamic-pie__chart[data-percentage="81"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-81 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="81"] .dynamic-pie__completed:after {
+  transform: rotate(-68.4deg);
+  animation: second-81 2s 1 ease-out;
+}
+@keyframes tens-81 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-16rem);
+  }
+}
+@keyframes ones-81 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-81 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-81 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-81 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-68.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="82"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="82"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="82"] .dynamic-pie__percentage:before {
+  animation: tens-82 2s 1 steps(8, end);
+}
+.dynamic-pie__chart[data-percentage="82"] .dynamic-pie__percentage:after {
+  animation: ones-82 0.2409638554s 8.3 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="82"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-82 2s linear;
+}
+.dynamic-pie__chart[data-percentage="82"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-82 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="82"] .dynamic-pie__completed:after {
+  transform: rotate(-64.8deg);
+  animation: second-82 2s 1 ease-out;
+}
+@keyframes tens-82 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-16rem);
+  }
+}
+@keyframes ones-82 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-82 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-82 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-82 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-64.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="83"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="83"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="83"] .dynamic-pie__percentage:before {
+  animation: tens-83 2s 1 steps(8, end);
+}
+.dynamic-pie__chart[data-percentage="83"] .dynamic-pie__percentage:after {
+  animation: ones-83 0.2380952381s 8.4 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="83"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-83 2s linear;
+}
+.dynamic-pie__chart[data-percentage="83"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-83 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="83"] .dynamic-pie__completed:after {
+  transform: rotate(-61.2deg);
+  animation: second-83 2s 1 ease-out;
+}
+@keyframes tens-83 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-16rem);
+  }
+}
+@keyframes ones-83 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-83 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-83 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-83 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-61.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="84"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="84"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="84"] .dynamic-pie__percentage:before {
+  animation: tens-84 2s 1 steps(9, end);
+}
+.dynamic-pie__chart[data-percentage="84"] .dynamic-pie__percentage:after {
+  animation: ones-84 0.2352941176s 8.5 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="84"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-84 2s linear;
+}
+.dynamic-pie__chart[data-percentage="84"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-84 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="84"] .dynamic-pie__completed:after {
+  transform: rotate(-57.6deg);
+  animation: second-84 2s 1 ease-out;
+}
+@keyframes tens-84 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-18rem);
+  }
+}
+@keyframes ones-84 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-84 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-84 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-84 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-57.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="85"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="85"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="85"] .dynamic-pie__percentage:before {
+  animation: tens-85 2s 1 steps(9, end);
+}
+.dynamic-pie__chart[data-percentage="85"] .dynamic-pie__percentage:after {
+  animation: ones-85 0.2325581395s 8.6 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="85"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-85 2s linear;
+}
+.dynamic-pie__chart[data-percentage="85"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-85 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="85"] .dynamic-pie__completed:after {
+  transform: rotate(-54deg);
+  animation: second-85 2s 1 ease-out;
+}
+@keyframes tens-85 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-18rem);
+  }
+}
+@keyframes ones-85 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-85 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-85 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-85 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-54deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="86"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="86"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="86"] .dynamic-pie__percentage:before {
+  animation: tens-86 2s 1 steps(9, end);
+}
+.dynamic-pie__chart[data-percentage="86"] .dynamic-pie__percentage:after {
+  animation: ones-86 0.2298850575s 8.7 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="86"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-86 2s linear;
+}
+.dynamic-pie__chart[data-percentage="86"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-86 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="86"] .dynamic-pie__completed:after {
+  transform: rotate(-50.4deg);
+  animation: second-86 2s 1 ease-out;
+}
+@keyframes tens-86 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-18rem);
+  }
+}
+@keyframes ones-86 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-86 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-86 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-86 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-50.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="87"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="87"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="87"] .dynamic-pie__percentage:before {
+  animation: tens-87 2s 1 steps(9, end);
+}
+.dynamic-pie__chart[data-percentage="87"] .dynamic-pie__percentage:after {
+  animation: ones-87 0.2272727273s 8.8 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="87"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-87 2s linear;
+}
+.dynamic-pie__chart[data-percentage="87"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-87 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="87"] .dynamic-pie__completed:after {
+  transform: rotate(-46.8deg);
+  animation: second-87 2s 1 ease-out;
+}
+@keyframes tens-87 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-18rem);
+  }
+}
+@keyframes ones-87 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-87 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-87 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-87 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-46.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="88"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="88"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="88"] .dynamic-pie__percentage:before {
+  animation: tens-88 2s 1 steps(9, end);
+}
+.dynamic-pie__chart[data-percentage="88"] .dynamic-pie__percentage:after {
+  animation: ones-88 0.2247191011s 8.9 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="88"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-88 2s linear;
+}
+.dynamic-pie__chart[data-percentage="88"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-88 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="88"] .dynamic-pie__completed:after {
+  transform: rotate(-43.2deg);
+  animation: second-88 2s 1 ease-out;
+}
+@keyframes tens-88 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-18rem);
+  }
+}
+@keyframes ones-88 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-88 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-88 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-88 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-43.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="89"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="89"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="89"] .dynamic-pie__percentage:before {
+  animation: tens-89 2s 1 steps(9, end);
+}
+.dynamic-pie__chart[data-percentage="89"] .dynamic-pie__percentage:after {
+  animation: ones-89 0.2222222222s 9 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="89"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-89 2s linear;
+}
+.dynamic-pie__chart[data-percentage="89"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-89 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="89"] .dynamic-pie__completed:after {
+  transform: rotate(-39.6deg);
+  animation: second-89 2s 1 ease-out;
+}
+@keyframes tens-89 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-18rem);
+  }
+}
+@keyframes ones-89 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-89 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-89 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-89 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-39.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="90"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="90"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="90"] .dynamic-pie__percentage:before {
+  animation: tens-90 2s 1 steps(9, end);
+}
+.dynamic-pie__chart[data-percentage="90"] .dynamic-pie__percentage:after {
+  animation: ones-90 0.2197802198s 9.1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="90"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-90 2s linear;
+}
+.dynamic-pie__chart[data-percentage="90"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-90 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="90"] .dynamic-pie__completed:after {
+  transform: rotate(-36deg);
+  animation: second-90 2s 1 ease-out;
+}
+@keyframes tens-90 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-18rem);
+  }
+}
+@keyframes ones-90 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-90 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-90 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-90 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-36deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="91"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="91"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="91"] .dynamic-pie__percentage:before {
+  animation: tens-91 2s 1 steps(9, end);
+}
+.dynamic-pie__chart[data-percentage="91"] .dynamic-pie__percentage:after {
+  animation: ones-91 0.2173913043s 9.2 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="91"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-91 2s linear;
+}
+.dynamic-pie__chart[data-percentage="91"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-91 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="91"] .dynamic-pie__completed:after {
+  transform: rotate(-32.4deg);
+  animation: second-91 2s 1 ease-out;
+}
+@keyframes tens-91 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-18rem);
+  }
+}
+@keyframes ones-91 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-91 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-91 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-91 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-32.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="92"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="92"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="92"] .dynamic-pie__percentage:before {
+  animation: tens-92 2s 1 steps(9, end);
+}
+.dynamic-pie__chart[data-percentage="92"] .dynamic-pie__percentage:after {
+  animation: ones-92 0.2150537634s 9.3 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="92"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-92 2s linear;
+}
+.dynamic-pie__chart[data-percentage="92"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-92 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="92"] .dynamic-pie__completed:after {
+  transform: rotate(-28.8deg);
+  animation: second-92 2s 1 ease-out;
+}
+@keyframes tens-92 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-18rem);
+  }
+}
+@keyframes ones-92 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-92 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-92 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-92 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-28.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="93"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="93"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="93"] .dynamic-pie__percentage:before {
+  animation: tens-93 2s 1 steps(9, end);
+}
+.dynamic-pie__chart[data-percentage="93"] .dynamic-pie__percentage:after {
+  animation: ones-93 0.2127659574s 9.4 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="93"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-93 2s linear;
+}
+.dynamic-pie__chart[data-percentage="93"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-93 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="93"] .dynamic-pie__completed:after {
+  transform: rotate(-25.2deg);
+  animation: second-93 2s 1 ease-out;
+}
+@keyframes tens-93 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-18rem);
+  }
+}
+@keyframes ones-93 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-93 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-93 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-93 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-25.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="94"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="94"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="94"] .dynamic-pie__percentage:before {
+  animation: tens-94 2s 1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="94"] .dynamic-pie__percentage:after {
+  animation: ones-94 0.2105263158s 9.5 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="94"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-94 2s linear;
+}
+.dynamic-pie__chart[data-percentage="94"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-94 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="94"] .dynamic-pie__completed:after {
+  transform: rotate(-21.6deg);
+  animation: second-94 2s 1 ease-out;
+}
+@keyframes tens-94 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes ones-94 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-94 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-94 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-94 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-21.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="95"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="95"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="95"] .dynamic-pie__percentage:before {
+  animation: tens-95 2s 1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="95"] .dynamic-pie__percentage:after {
+  animation: ones-95 0.2083333333s 9.6 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="95"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-95 2s linear;
+}
+.dynamic-pie__chart[data-percentage="95"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-95 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="95"] .dynamic-pie__completed:after {
+  transform: rotate(-18deg);
+  animation: second-95 2s 1 ease-out;
+}
+@keyframes tens-95 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes ones-95 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-95 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-95 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-95 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-18deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="96"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="96"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="96"] .dynamic-pie__percentage:before {
+  animation: tens-96 2s 1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="96"] .dynamic-pie__percentage:after {
+  animation: ones-96 0.206185567s 9.7 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="96"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-96 2s linear;
+}
+.dynamic-pie__chart[data-percentage="96"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-96 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="96"] .dynamic-pie__completed:after {
+  transform: rotate(-14.4deg);
+  animation: second-96 2s 1 ease-out;
+}
+@keyframes tens-96 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes ones-96 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-96 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-96 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-96 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-14.4deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="97"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="97"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="97"] .dynamic-pie__percentage:before {
+  animation: tens-97 2s 1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="97"] .dynamic-pie__percentage:after {
+  animation: ones-97 0.2040816327s 9.8 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="97"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-97 2s linear;
+}
+.dynamic-pie__chart[data-percentage="97"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-97 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="97"] .dynamic-pie__completed:after {
+  transform: rotate(-10.8deg);
+  animation: second-97 2s 1 ease-out;
+}
+@keyframes tens-97 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes ones-97 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-97 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-97 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-97 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-10.8deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="98"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="98"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="98"] .dynamic-pie__percentage:before {
+  animation: tens-98 2s 1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="98"] .dynamic-pie__percentage:after {
+  animation: ones-98 0.202020202s 9.9 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="98"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-98 2s linear;
+}
+.dynamic-pie__chart[data-percentage="98"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-98 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="98"] .dynamic-pie__completed:after {
+  transform: rotate(-7.2deg);
+  animation: second-98 2s 1 ease-out;
+}
+@keyframes tens-98 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes ones-98 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-98 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-98 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-98 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-7.2deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="99"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="99"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="99"] .dynamic-pie__percentage:before {
+  animation: tens-99 2s 1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="99"] .dynamic-pie__percentage:after {
+  animation: ones-99 0.2s 10 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="99"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-99 2s linear;
+}
+.dynamic-pie__chart[data-percentage="99"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-99 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="99"] .dynamic-pie__completed:after {
+  transform: rotate(-3.6deg);
+  animation: second-99 2s 1 ease-out;
+}
+@keyframes tens-99 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes ones-99 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-99 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-99 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-99 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-3.6deg);
+  }
+}
+.dynamic-pie__chart[data-percentage="100"]:before {
+  opacity: 1;
+  transition: opacity 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="100"] .dynamic-pie__percentage {
+  visibility: hidden;
+  transition: visibility 0s linear 2s;
+}
+.dynamic-pie__chart[data-percentage="100"] .dynamic-pie__percentage:before {
+  animation: tens-100 2s 1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="100"] .dynamic-pie__percentage:after {
+  animation: ones-100 0.198019802s 10.1 steps(10, end);
+}
+.dynamic-pie__chart[data-percentage="100"] .dynamic-pie__completed {
+  clip: rect(0 200px 200px 0px);
+  animation: mask-100 2s linear;
+}
+.dynamic-pie__chart[data-percentage="100"] .dynamic-pie__completed:before {
+  transform: rotate(0deg);
+  animation: first-100 2s 1 linear;
+}
+.dynamic-pie__chart[data-percentage="100"] .dynamic-pie__completed:after {
+  transform: rotate(0deg);
+  animation: second-100 2s 1 ease-out;
+}
+@keyframes tens-100 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes ones-100 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20rem);
+  }
+}
+@keyframes mask-100 {
+  0%, 50% {
+    clip: rect(0 200px 200px 100px);
+  }
+  51%, 100% {
+    clip: rect(0 200px 200px 0px);
+  }
+}
+@keyframes first-100 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes second-100 {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  51% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

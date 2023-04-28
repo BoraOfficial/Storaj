@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Storaj</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='dashboard-style.css') }}">
+  <script src="{{ url_for('static', filename='dashboard-script.js') }}" defer></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h1 class="title">Available Storage</h1>
+    <div class="dynamic-pie__container">
+      <div class='dynamic-pie__chart' id='available' data-percentage='0'>
+        <div>%</div>
+        <div class='dynamic-pie__completed' id="avail"></div>
+      </div>
+    </div>
+    <h1 class="title" style="right: -10vw;">Used Storage</h1>
+    <div class="dynamic-pie__container">
+      <div class='dynamic-pie__chart' id='used' data-percentage='0'>
+        <div>%</div>
+        <div class='dynamic-pie__completed'></div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+
+</body>
+
+</html>
