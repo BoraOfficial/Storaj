@@ -30,7 +30,7 @@ It'll ask you to choose a password. After that, you should be up and running!
 ---
 # Usage 
 
-OK, now you have set up your server, now what? Well, open up the browser of your choice and navigate to ```http://127.0.0.1:5000```. There it is baby!!! You should be shown an authentication page, something like such:
+OK, now you have set up your server, now what? Well, open up the browser of your choice and navigate to ```http://127.0.0.1:5000```. There it is! You should be shown an authentication page, something like such:
 
 ![Authentication Page](https://github.com/BoraOfficial/Storaj/blob/bd2a85c44f8585e58f2dd5775cee963e031a0df9/img/Screenshot-Github-Storaj-1.png)
 
@@ -42,6 +42,6 @@ The rest is for you to discover. Good luck!
 
 ---
 
-Copyright © 2023 BoraOfficial. All rights reserved.
+Copyright © 2023 BoraOfficial. This material is intended solely for personal use.
 
 ---
