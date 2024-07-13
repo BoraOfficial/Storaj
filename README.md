@@ -32,11 +32,11 @@ It'll ask you to choose a password. After that, you should be up and running!
 
 OK, now you have set up your server, now what? Well, open up the browser of your choice and navigate to ```http://127.0.0.1:5000```. There it is baby!!! You should be shown an authentication page, something like such:
 
-![Authentication Page](https://raw.githubusercontent.com/BoraOfficial/Storaj/main/img/Screenshot-Github-Storaj-1.png)
+![Authentication Page](https://github.com/BoraOfficial/Storaj/blob/bd2a85c44f8585e58f2dd5775cee963e031a0df9/img/Screenshot-Github-Storaj-1.png)
 
 Enter the password you've chosen. You should be shown the dashboard, something like such:
 <br>
-![Dashboard](https://raw.githubusercontent.com/BoraOfficial/Storaj/main/img/Screenshot-Github-Storaj-2.png)
+![Dashboard](https://github.com/BoraOfficial/Storaj/blob/bd2a85c44f8585e58f2dd5775cee963e031a0df9/img/Screenshot-Github-Storaj-2.png)
 <br>
 The rest is for you to discover. Good luck!
 
