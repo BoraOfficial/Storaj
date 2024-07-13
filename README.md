@@ -3,9 +3,9 @@ Swiss based private storage on LAN
 
 ---
 
-This is **THE** safest and the most private way to store your data.<br>
-Why? Well simply because **YOU** setup your **OWN** storage unit **YOURSELF** instead of giving your personal data to those **FILTHY** corporations.<br>
-Convinced? Well let's get into the setup then!
+This is the most private way to store your data.
+
+Why? Well, simply because you own your data! Basically, you are hosting your own Google Drive or Dropbox.<br>
 
 ---
 # Setup
