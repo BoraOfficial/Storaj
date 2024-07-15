@@ -43,5 +43,3 @@ The rest is for you to discover. Good luck!
 ---
 
 Copyright © 2023 BoraOfficial. This material is intended solely for personal use.
-
----
