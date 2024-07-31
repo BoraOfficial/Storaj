@@ -19,7 +19,7 @@ Downloading Storaj is easy. Click on the green Code button to download.
 In order for Storaj to work, you need <a href="https://www.python.org/downloads/">Python</a>.<br>
 Download the latest version for the platform of your choice.
 ## Step 3.) Run Storaj
-Storaj needs a server to work, and for that reason, you need to host your own server. You can either use your own computer, buy a <a href="https://www.raspberrypi.com/">Raspberry Pi</a> or use a hosting service. For our purpose, we will use our own computer but it's highly recommended to combine a <a href="https://www.raspberrypi.com/">Raspberry Pi</a> and <a href="https://ngrok.com/">Ngrok</a> to both make it secure and available to you anytime, anywhere.
+Storaj needs a server to work, and for that reason, you need to host your own server. You can either use your own computer, buy a <a href="https://www.raspberrypi.com/">Raspberry Pi</a> or use a hosting service. For our purpose, we will use our own computer but it's highly recommended to combine a <a href="https://www.raspberrypi.com/">Raspberry Pi</a> to have a dedicated 24/7 private storage on LAN.
 
 Enough talk, so in order to run Storaj you will need to open up your terminal and type this:
 ```
@@ -39,6 +39,11 @@ Enter the password you've chosen. You should be shown the dashboard, something l
 ![Dashboard](https://github.com/BoraOfficial/Storaj/blob/bd2a85c44f8585e58f2dd5775cee963e031a0df9/img/Screenshot-Github-Storaj-2.png)
 <br>
 The rest is for you to discover. Good luck!
+
+---
+# Heads up!
+
+This software is intended to be used only in the LAN. Therefore, the authentication system & other protections are lowered for ease of access. It is highly adviced against to NOT serve this software outside of your network.
 
 ---
 
