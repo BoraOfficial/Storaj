@@ -43,7 +43,7 @@ The rest is for you to discover. Good luck!
 ---
 # Heads up!
 
-This software is intended to be used only in the LAN. Therefore, the authentication system & other protections are lowered for ease of access. It is highly adviced against to NOT serve this software outside of your network.
+This software is intended to be used only in the LAN. Therefore, the authentication system & other protections are lowered for ease of access. It is highly adviced against to serve this software outside of your network.
 
 ---
 
